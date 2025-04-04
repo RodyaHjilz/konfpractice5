@@ -14,7 +14,7 @@ def test_okresponse(client):
 
 def test_hello_route(client):
     response = client.get('/')
-    assert response.data.decode('utf-8') == "Hello, Dockerized Python App!"
+    assert response.data.decode('utf-8') == "Hello!"
 
 def test_badresponse(client):
     response = client.get('/badresponse')

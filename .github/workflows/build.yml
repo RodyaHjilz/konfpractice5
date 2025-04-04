@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
-        run: pytest -v .\test_app.py
+        run: pytest -v test_app.py
 
   build-and-push:
     needs: test
@@ -31,6 +31,5 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
-          context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
